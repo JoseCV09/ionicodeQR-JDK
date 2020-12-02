@@ -1,0 +1,34 @@
+
+ 
+<ion-content ion-padding>
+
+  <h2 style="text-align: center;">Scanner QR - JDK</h2>
+
+  <div style="padding: 10px">
+
+      <!--CODIFICAR-->
+      <ion-item>
+        <ion-label position="floating">Ingrese algun texto: </ion-label>
+        <ion-input type="text" [(ngModel)]="dataCodificada"></ion-input>    
+      </ion-item>
+  
+  
+      <ion-button expand="block" fill="outline" (click)="encodeCode()">
+          Generar Código QR</ion-button>
+
+      <br>
+
+      <!--SCANNEAR-->
+      <ion-button expand="block" color="success" fill="outline" (click)="readCodeScan()">
+        <ion-icon slot="end" name="expand"></ion-icon>
+        Scannear Código QR</ion-button>
+    
+      <div *ngIf="dataScan">
+          <p style="text-align: center;">
+              Contenido obtenido: <b>{{ dataScan["text"] }}</b>
+          </p>
+      </div>
+
+  </div>
+    
+</ion-content>
